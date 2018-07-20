@@ -23,8 +23,12 @@ The Hall is a community based server centred around providing a fun and relaxed 
     
     await client.change_presence(game=discord.Game(name='The Hall'))
     await client.send_message(member, newUserMessage)
-    await client.send_message(discord.Object(id='453679995357888522'), ':house:  |_**Hello '+member.name+' :wave:  Welcome to the Hall, have fun!**_')
+    await client.send_message(discord.Object(id='453693951950716939'), ':house:  |_**Hello '+member.name+' :wave:  Welcome to the Hall, have fun!**_')
     print("Sent message to " + member.name)
-
+   
+@client.event
+async def on_member_remove(member):
+    await client.send_message(discord.Object(id='453693951950716939'), ':negative_squared_cross_mark: |** Goodbye '+member.name+' :hand_splayed: we will miss you! **:confused:')
+    print("Sent leave message to " + member.name)
 
 client.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
