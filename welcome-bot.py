@@ -4,7 +4,6 @@ import discord
 import asyncio
 
 client=discord.Client()
-
 @client.event
 async def on_ready():
     print('logged in as')
@@ -22,7 +21,10 @@ The Hall is a community based server centred around providing a fun and relaxed 
 -We have :**
 ```diff
 - Custom Bots , NSFW content , Games , Active Members , Partner and Hypesquad Discord Members , Giveaways , Music , Ranking System  and more...``` """
+
     await client.send_message(member, newUserMessage)
+    await client.send_message(discord.Object(id='453679995357888522'), 'Welcome '+member.name+' To The Hall')
     print("Sent message to " + member.name)
+
 
 client.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
