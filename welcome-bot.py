@@ -18,4 +18,4 @@ async def on_member_join(member):
     await client.send_message(member, newUserMessage)
     print("Sent message to " + member.name)
 
-client.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLCvQ.iXf-flHOD3tF5q8O8uwkwqfGLt0')
+client.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
