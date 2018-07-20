@@ -15,15 +15,13 @@ async def on_ready():
 async def on_member_join(member):
     print("Recognised that a member called " + member.name +" joined")
     newUserMessage = """**Welcome to The Hall :house: """   + member.name +   """ please make sure to read the rules and enjoy your stay
-
 The Hall is a community based server centred around providing a fun and relaxed environment for its users.
-
 -We have :**
 ```diff
 - Custom Bots , NSFW content , Games , Active Members , Partner and Hypesquad Discord Members , Giveaways , Music , Ranking System  and more...``` """
 
     await client.send_message(member, newUserMessage)
-    await client.send_message(discord.Object(id='453679995357888522'), (':thehall:  |_**Hello ('+member.name+') :wave:  Welcome to the Hall, have fun!**_')
+    await client.send_message(discord.Object(id='453679995357888522'), ':thehall:  |_**Hello ('+member.name+') :wave:  Welcome to the Hall, have fun!**_')
     print("Sent message to " + member.name)
 
 
