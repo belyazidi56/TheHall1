@@ -1,1 +1,1 @@
-worker python welcome-bot.py
+python welcome-bot.py
