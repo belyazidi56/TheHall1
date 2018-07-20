@@ -11,7 +11,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----')
-newUserMessage = "Welcome To The Hall Server "
+newUserMessage = "Welcome " + member.name + " To The Hall :house: Server "
 @client.event
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
