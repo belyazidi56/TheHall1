@@ -20,6 +20,8 @@ The Hall is a community based server centred around providing a fun and relaxed 
 ```diff
 - Custom Bots , NSFW content , Games , Active Members , Partner and Hypesquad Discord Members , Giveaways , Music , Ranking System  and more...``` """
 
+    
+    await client.change_presence(game=discord.Game(name='The Hall'))
     await client.send_message(member, newUserMessage)
     await client.send_message(discord.Object(id='453679995357888522'), ':house:  |_**Hello ('+member.name+') :wave:  Welcome to the Hall, have fun!**_')
     print("Sent message to " + member.name)
