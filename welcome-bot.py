@@ -14,8 +14,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----')
-    await client.change_presence(game=discord.Game(name='The Hall| &help'))
-
+    await client.change_presence(game=discord.Game(name='The Hall |&help'))
 
 @client.event
 async def on_member_join(member):
