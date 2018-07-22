@@ -97,6 +97,7 @@ async def help(ctx):
                         icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
         emb4.add_field(name="**Welcome @[User] :**",value="Say Welcome To New Member",inline=False)
         emb4.add_field(name="\n**Info @[User]**", value="Show Member Information",inline=False)
+        emb4.add_field(name="\n**iamnsfw**", value="Earn NSFW Role",inline=False)
         await bot.say(embed=emb4)
 @bot.command(pass_context=True)
 async def info(ctx, user: discord.Member):
