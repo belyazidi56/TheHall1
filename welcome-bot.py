@@ -7,7 +7,14 @@ client = discord.Client()
 
 bot = commands.Bot(command_prefix='&')
 bot.remove_command('help')
-
+demsg=[
+    'fuck','nigga','hentai','Nigger','Niga','Pussy','boobs','boob','dirt','shit'
+]
+bypass_list =[
+    '470428424230666240',
+    '469603157509668864',
+    '470406062604943360'
+]
 @client.event
 async def on_ready():
     print('logged in as')
@@ -33,6 +40,15 @@ The Hall is a community based server centred around providing a fun and relaxed 
     emb.set_thumbnail(url=member.avatar_url)
     await client.send_message(discord.Object(id='453679995357888522'),embed=emb)
     print("Sent message to " + member.name)
+@client.event
+async def on_message(message):
+    content = message.content.lower()
+    for word in demsg:
+        if word in content:
+           if not message.author.id in bypass_list and message.channel.id not in bypass_list:
+            await client.delete_message(message)
+            await client.send_message(message.channel,"**Hey "+message.author.name+"!** You're not allowed to use that word here! Please Do not Use It Again!")
+            break
 
 @client.event
 async def on_message(message):
