@@ -33,6 +33,30 @@ The Hall is a community based server centred around providing a fun and relaxed 
     emb.set_thumbnail(url=member.avatar_url)
     await client.send_message(discord.Object(id='453679995357888522'),embed=emb)
     print("Sent message to " + member.name)
+
+@client.event
+async def on_message(message):
+    emb6 = (discord.Embed(description=' NSFW Role Request !', color=0xff65a6))
+    emb6.set_author(name="Role Request",
+                    icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
+    emb6.set_thumbnail(url=message.author.avatar_url)
+    emb6.add_field(name="**:white_check_mark: Success "+message.author.name+" | Role Earned'**", value='_'+message.author.id+'_')
+
+    emb7 = (discord.Embed(description='NSFW Role Request ! ', color=0xff65a6))
+    emb7.set_author(name="Role Request ",
+                    icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
+    emb7.set_thumbnail(url=message.author.avatar_url)
+    emb7.add_field(name="**:question:ERROR | You already have nsfw role. :open_mouth:**", value=message.author.id)
+    if message.content.startswith("&iamnsfw"):
+            role = discord.utils.get(message.server.roles, name='nsfw')
+            if role in message.author.roles:
+                await client.send_message(message.channel, embed=emb7)
+            else:
+                    try:
+                        await client.add_roles(message.author, role)
+                        await client.send_message(message.channel, embed=emb6)
+                    except discord.Forbidden:
+                        return
 @client.event
 async def on_member_remove(member):
     emb1 = (discord.Embed(description=':negative_squared_cross_mark: |** Goodbye ' + member.name + ' :hand_splayed: we will miss you! **:confused:',color=0xff65a6))
