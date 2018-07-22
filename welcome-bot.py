@@ -5,7 +5,7 @@ import asyncio
 
 client = discord.Client()
 
-bot = commands.Bot(command_prefix='?')
+bot = commands.Bot(command_prefix='&')
 
 @client.event
 async def on_ready():
@@ -13,7 +13,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----')
-    await client.change_presence(game=discord.Game(name='?helpme'))
+    await client.change_presence(game=discord.Game(name='&helpme'))
 
 
 @client.event
