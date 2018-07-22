@@ -28,6 +28,7 @@ The Hall is a community based server centred around providing a fun and relaxed 
     await client.send_message(member, newUserMessage)
     emb=(discord.Embed(description=':house: |_**Hello '+member.name+' :wave:  Welcome to the Hall, have fun!**_',color=0xff65a6))
     emb.set_author(name="Welcome To The Hall",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+    emb.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470419518280302616/giphy.gif')
     emb.set_thumbnail(url=member.avatar_url)
     await client.send_message(discord.Object(id='453679995357888522'),embed=emb)
     print("Sent message to " + member.name)
