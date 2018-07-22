@@ -40,7 +40,7 @@ async def on_message(message):
     emb6.set_author(name="Role Request",
                     icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
     emb6.set_thumbnail(url=message.author.avatar_url)
-    emb6.add_field(name="**:white_check_mark: Success "+message.author.name+" | Role Earned'**", value='_'+message.author.id+'_')
+    emb6.add_field(name="**:white_check_mark: Success "+message.author.name+" | Role Earned**", value='_'+message.author.id+'_')
 
     emb7 = (discord.Embed(description='NSFW Role Request ! ', color=0xff65a6))
     emb7.set_author(name="Role Request ",
