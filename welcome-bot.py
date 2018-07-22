@@ -37,7 +37,7 @@ async def on_member_remove(member):
     emb1.set_author(name="GoodBye",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
     emb1.set_thumbnail(url=member.avatar_url)
     emb1.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470417307345223700/JhgS.gif')
-    await client.send_message(discord.Object(id='469630446494416908'),embed=emb1)
+    await client.send_message(discord.Object(id='453693951950716939'),embed=emb1)
     print("Sent leave message to " + member.name)
 
 
