@@ -70,5 +70,5 @@ async def info(ctx, user: discord.Member):
         emb2.add_field(name="** User_Hightest_Role**", value=format(user.top_role))
         emb2.add_field(name="** User_Joined_At**", value=format(user.joined_at))
         await bot.say(embed=emb2)
-client.login('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
-bot.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
+client.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
+bot.login('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
