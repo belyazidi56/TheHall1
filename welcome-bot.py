@@ -29,7 +29,7 @@ The Hall is a community based server centred around providing a fun and relaxed 
     await client.change_presence(game=discord.Game(name='The Hall'))
     await client.send_message(member, newUserMessage)
     emb=(discord.Embed(description=':house: |_**Hello '+member.name+' :wave:  Welcome to the Hall, have fun!**_',color=0xff65a6))
-    emb.set_author(name="Welcome To The Hall",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+    emb.set_author(name="Welcome To The Hall",icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
     emb.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470419518280302616/giphy.gif')
     emb.set_thumbnail(url=member.avatar_url)
     await client.send_message(discord.Object(id='453679995357888522'),embed=emb)
@@ -37,7 +37,7 @@ The Hall is a community based server centred around providing a fun and relaxed 
 @client.event
 async def on_member_remove(member):
     emb1 = (discord.Embed(description=':negative_squared_cross_mark: |** Goodbye ' + member.name + ' :hand_splayed: we will miss you! **:confused:',color=0xff65a6))
-    emb1.set_author(name="GoodBye",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+    emb1.set_author(name="GoodBye",icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
     emb1.set_thumbnail(url=member.avatar_url)
     emb1.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470417307345223700/JhgS.gif')
     await client.send_message(discord.Object(id='453693951950716939'),embed=emb1)
@@ -55,14 +55,14 @@ async def Welcome(ctx, user: discord.Member):
 async def help(ctx):
         emb4 = (discord.Embed(description='Help', color=0xff65a6))
         emb4.set_author(name="The Hall",
-                        icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+                        icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
         emb4.add_field(name="**Welcome @[User] :**",value="Say Welcome To New Member",inline=False)
         emb4.add_field(name="\n**Info @[User]**", value="Show Member Information",inline=False)
         await bot.say(embed=emb4)
 @bot.command(pass_context=True)
 async def info(ctx, user: discord.Member):
         emb2 = (discord.Embed(description=''+format(user.name)+' Information :',color=0xff65a6))
-        emb2.set_author(name="User Info",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+        emb2.set_author(name="User Info",icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
         emb2.set_thumbnail(url=user.avatar_url)
         emb2.add_field(name="**Username**", value=format(user.name))
         emb2.add_field(name="**User ID**", value=format(user.id))
