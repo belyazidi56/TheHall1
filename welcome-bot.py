@@ -6,6 +6,7 @@ import asyncio
 client = discord.Client()
 
 bot = commands.Bot(command_prefix='&')
+bot.remove_command('help')
 
 @client.event
 async def on_ready():
@@ -13,7 +14,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----')
-    await client.change_presence(game=discord.Game(name='&helpme'))
+    await client.change_presence(game=discord.Game(name='&help'))
 
 
 @client.event
@@ -42,39 +43,32 @@ async def on_member_remove(member):
     await client.send_message(discord.Object(id='453693951950716939'),embed=emb1)
     print("Sent leave message to " + member.name)
 
-@bot.event
-async def on_ready():
-    print ("Ready when you are xd")
-    print ("I am running on " + bot.user.name)
-    print ("With the ID: " + bot.user.id)
+
 
 @bot.command(pass_context=True)
-async def Welcome(ctx,user: discord.Member):
-    emb3 = (discord.Embed(description='Welcome '+format(user.name)+'',color=0xff65a6))
-    emb3.set_thumbnail(url=user.avatar_url)
-    emb3.set_image(url='https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
-    await bot.say(embed=emb3)
-
+async def Welcome(ctx, user: discord.Member):
+        emb3 = (discord.Embed(description='Welcome '+format(user.name)+'',color=0xff65a6))
+        emb3.set_thumbnail(url=user.avatar_url)
+        emb3.set_image(url='https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
+        await bot.say(embed=emb3)
 @bot.command(pass_context=True)
-async def helpme(ctx):
+async def help(ctx):
         emb4 = (discord.Embed(description='Help', color=0xff65a6))
         emb4.set_author(name="The Hall",
                         icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
-        emb4.add_field(name="**Welcome @[User] :**",value="\nSay Welcome To New Member")
-        emb4.add_field(name="**Info @[User]**", value="\nShow Member Information")
+        emb4.add_field(name="**Welcome @[User] :**",value="Say Welcome To New Member",inline=False)
+        emb4.add_field(name="\n**Info @[User]**", value="Show Member Information",inline=False)
         await bot.say(embed=emb4)
 @bot.command(pass_context=True)
 async def info(ctx, user: discord.Member):
-    emb2 = (discord.Embed(description=''+format(user.name)+' Information :',color=0xff65a6))
-    emb2.set_author(name="User Info",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
-    emb2.set_thumbnail(url=user.avatar_url)
-    emb2.add_field(name="**Username**", value=format(user.name))
-    emb2.add_field(name="**User ID**", value=format(user.id))
-    emb2.add_field(name="**User Status**", value=format(user.status))
-    emb2.add_field(name="** User_Hightest_Role**", value=format(user.top_role))
-    emb2.add_field(name="** User_Joined_At**", value=format(user.joined_at))
-    await bot.say(embed=emb2)
-
-
-
-client.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
+        emb2 = (discord.Embed(description=''+format(user.name)+' Information :',color=0xff65a6))
+        emb2.set_author(name="User Info",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+        emb2.set_thumbnail(url=user.avatar_url)
+        emb2.add_field(name="**Username**", value=format(user.name))
+        emb2.add_field(name="**User ID**", value=format(user.id))
+        emb2.add_field(name="**User Status**", value=format(user.status))
+        emb2.add_field(name="** User_Hightest_Role**", value=format(user.top_role))
+        emb2.add_field(name="** User_Joined_At**", value=format(user.joined_at))
+        await bot.say(embed=emb2)
+client.login('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
+bot.run('NDY5NjAzMTU3NTA5NjY4ODY0.DjLP6g.AORkb3xerZT3uc1WshPcPz-cDew')
