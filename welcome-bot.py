@@ -33,7 +33,11 @@ The Hall is a community based server centred around providing a fun and relaxed 
     print("Sent message to " + member.name)
 @client.event
 async def on_member_remove(member):
-    await client.send_message(discord.Object(id='469630446494416908'), ':negative_squared_cross_mark: |** Goodbye ' + member.name + ' :hand_splayed: we will miss you! **:confused:')
+    emb1 = (discord.Embed(description=':negative_squared_cross_mark: |** Goodbye ' + member.name + ' :hand_splayed: we will miss you! **:confused:',color=0xff65a6))
+    emb1.set_author(name="GoodBye",icon_url="https://cdn.discordapp.com/attachments/466276309501476874/469602792265220096/Hall.jpg")
+    emb1.set_thumbnail(url=member.avatar_url)
+    emb1.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470417307345223700/JhgS.gif')
+    await client.send_message(discord.Object(id='469630446494416908'),embed=emb1)
     print("Sent leave message to " + member.name)
 
 
