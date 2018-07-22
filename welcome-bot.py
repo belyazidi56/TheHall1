@@ -85,7 +85,7 @@ async def on_member_remove(member):
 
 
 @bot.command(pass_context=True)
-async def Welcome(ctx, user: discord.Member):
+async def welcome(ctx, user: discord.Member):
         emb3 = (discord.Embed(description='Welcome '+format(user.name)+'',color=0xff65a6))
         emb3.set_thumbnail(url=user.avatar_url)
         emb3.set_image(url='https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
@@ -95,7 +95,7 @@ async def help(ctx):
         emb4 = (discord.Embed(description='Help', color=0xff65a6))
         emb4.set_author(name="The Hall",
                         icon_url="https://media.discordapp.net/attachments/466276309501476874/470612147475578880/image.jpg?width=456&height=480")
-        emb4.add_field(name="**Welcome @[User] :**",value="Say Welcome To New Member",inline=False)
+        emb4.add_field(name="**welcome @[User] :**",value="Say Welcome To New Member",inline=False)
         emb4.add_field(name="\n**Info @[User]**", value="Show Member Information",inline=False)
         emb4.add_field(name="\n**iamnsfw**", value="Earn NSFW Role",inline=False)
         await bot.say(embed=emb4)
