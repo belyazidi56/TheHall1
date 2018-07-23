@@ -113,6 +113,19 @@ async def on_message(message):
         await bot.send_message(discord.Object(id='453693951950716939'),embed=emb1)
         print("Sent leave message to " + member.name)
 
-
+@commands.has_permissions(kick_members=True)
+@bot.command(pass_context = True)
+async def kick(ctx, user: discord.Member):
+    emb3 = (discord.Embed(description='Kick ' + format(user.name) + '', color=0xff65a6))
+    emb3.set_thumbnail(url=user.avatar_url)
+    emb3.set_image(url='https://media.giphy.com/media/l2SpK3FbiHNMs81Ik/giphy.gif')
+    emb7 = (discord.Embed(description='Kicking ! ', color=0xff65a6))
+    emb7.set_thumbnail(url=user.avatar_url)
+    emb7.add_field(name="**:question:ERROR | You Don't Have Permission to kick users :open_mouth:**", value=user.id)
+    try:
+            await bot.kick(user)
+            await bot.say(embed=emb3)
+    except discord.Forbidden:
+            await bot.say(embed=emb7)
 
 bot.run('NDY5NjAzMTU3NTA5NjY4ODY0.Djbxlw.iEcJDEuivME9pE2HzsMMB8nw1_E')
