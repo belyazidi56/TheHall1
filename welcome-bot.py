@@ -31,9 +31,9 @@ async def help(ctx):
     emb4 = (discord.Embed(description='Help', color=0xff65a6))
     emb4.set_author(name="The Hall",
                     icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
-    emb4.add_field(name="**welcome @[User] :**", value="Say Welcome To New Member", inline=False)
-    emb4.add_field(name="\n**Info @[User]**", value="Show Member Information", inline=False)
-    emb4.add_field(name="\n**iamnsfw**", value="Earn NSFW Role", inline=False)
+    emb4.add_field(name="**&welcome @[User] :**", value="Say Welcome To New Member", inline=False)
+    emb4.add_field(name="\n**&info @[User]**", value="Show Member Information", inline=False)
+    emb4.add_field(name="\n**&iamnsfw**", value="Earn NSFW Role", inline=False)
     await bot.say(embed=emb4)
 
 
