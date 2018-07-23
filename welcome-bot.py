@@ -82,7 +82,6 @@ async def on_message(message):
             await bot.send_message(message.channel,"**Hey "+message.author.name+"!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
             break
 
-async def on_message(message):
     emb6 = (discord.Embed(description=' NSFW Role Request !', color=0xff65a6))
     emb6.set_author(name="Role Request",
                     icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
