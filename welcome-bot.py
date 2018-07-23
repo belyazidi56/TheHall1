@@ -56,7 +56,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('-----')
-    await bot.change_presence(game=discord.Game(name='The Hall | &help'))
+    await bot.change_presence(game=discord.Game(name='The Hall |&help'),status=discord.Status.dnd)
 @bot.event
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
