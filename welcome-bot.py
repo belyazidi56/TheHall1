@@ -73,7 +73,7 @@ The Hall is a community based server centred around providing a fun and relaxed 
     emb.set_thumbnail(url=member.avatar_url)
     await bot.send_message(discord.Object(id='453679995357888522'),embed=emb)
     print("Sent message to " + member.name)
-@bot.listen()
+@bot.event
 async def on_message(message):
     content = message.content.lower()
     for word in demsg:
@@ -81,10 +81,7 @@ async def on_message(message):
             await bot.delete_message(message)
             await bot.send_message(message.channel,"**Hey "+message.author.name+"!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
             break
-    await bot.process_commands(message)
 
-
-@bot.event
 async def on_message(message):
     emb6 = (discord.Embed(description=' NSFW Role Request !', color=0xff65a6))
     emb6.set_author(name="Role Request",
