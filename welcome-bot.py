@@ -112,6 +112,21 @@ async def on_message(message):
         emb1.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470417307345223700/JhgS.gif')
         await bot.send_message(discord.Object(id='453693951950716939'),embed=emb1)
         print("Sent leave message to " + member.name)
-
+@bot.command(pass_context = True)
+@commands.has_permissions(kick_members=True)
+async def kick(ctx, user: discord.Member):
+    emb8 = (discord.Embed(description=':boot: | **'+ format(user.name) +'** has been **Kicked** from The Hall ', color=0xff65a6))
+    emb8.set_thumbnail(url=user.avatar_url)
+    emb8.set_image(url='https://media.giphy.com/media/l2SpK3FbiHNMs81Ik/giphy.gif')
+    await bot.kick(user)
+    await bot.say(embed=emb8)
+@bot.command(pass_context = True)
+@commands.has_permissions(ban_members=True)
+async def ban(ctx, user: discord.Member):
+    emb8 = (discord.Embed(description=':no_entry:  | **'+ format(user.name) +'** has been **Banned** from The Hall ', color=0xff65a6))
+    emb8.set_thumbnail(url=user.avatar_url)
+    emb8.set_image(url='https://media.giphy.com/media/CybZqG4etuZsA/giphy.gif')
+    await bot.ban(user)
+    await bot.say(embed=emb8)
 
 bot.run('NDY5NjAzMTU3NTA5NjY4ODY0.Djbxlw.iEcJDEuivME9pE2HzsMMB8nw1_E')
