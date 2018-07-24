@@ -1,2 +1,2 @@
 worker: python welcome-bot.py
-workers: python Support.py
+process: python Support.py
