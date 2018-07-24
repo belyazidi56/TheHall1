@@ -16,9 +16,8 @@ demsg=[
     'dirt',
     'shit'
 ]
-bypass=
-[
-    '470406062604943360'
+bypass=[
+        '470406062604943360'
 ]
 
 @bot.command(pass_context=True)
