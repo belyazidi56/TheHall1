@@ -16,7 +16,10 @@ demsg=[
     'dirt',
     'shit'
 ]
-
+bypass=
+[
+    '470406062604943360'
+]
 
 @bot.command(pass_context=True)
 async def welcome(ctx, user: discord.Member):
@@ -78,9 +81,10 @@ async def on_message(message):
     content = message.content.lower()
     for word in demsg:
         if word in content:
-            await bot.delete_message(message)
-            await bot.send_message(message.channel,"**Hey "+message.author.name+"!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
-            break
+            if message.channel.id not in bypass:
+                await bot.delete_message(message)
+                await bot.send_message(message.channel,"**Hey "+message.author.name+"!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
+                break
 
     emb6 = (discord.Embed(description=' NSFW Role Request !', color=0xff65a6))
     emb6.set_author(name="Role Request",
