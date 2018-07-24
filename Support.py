@@ -4,7 +4,13 @@ import mysql.connector
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='&')
-
+@bot.event
+async def on_ready():
+    print('logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('-----')
+    await bot.change_presence(game=discord.Game(name='Support |DM me'),status=discord.Status.dnd)
 @bot.event
 async def on_message(message):
             msg = getattr(message.server, 'id', None)
