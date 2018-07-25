@@ -37,6 +37,13 @@ async def help(ctx):
     emb4.add_field(name="**&welcome @[User] :**", value="Say Welcome To New Member", inline=False)
     emb4.add_field(name="\n**&info @[User]**", value="Show Member Information", inline=False)
     emb4.add_field(name="\n**&iamnsfw**", value="Earn NSFW Role", inline=False)
+    emb4.add_field(name="\n**&mplay [Link or Music Name]**", value="Play Music", inline=False)
+    emb4.add_field(name="\n**&mpause**", value="Pause Music", inline=False)
+    emb4.add_field(name="\n**&mstop**", value="Stop Music", inline=False)
+    emb4.add_field(name="\n**&mskip**", value="Skip Music", inline=False)
+    emb4.add_field(name="\n**&mnp**", value="Now Playing", inline=False)
+    emb4.add_field(name="\n**&mvolume**", value="Set Volume", inline=False)
+    emb4.add_field(name="\n**&mqueue**", value="Queue", inline=False)
     await bot.say(embed=emb4)
 
 
