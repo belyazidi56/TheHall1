@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
+import os
 import asyncio
 bot = commands.Bot(command_prefix='&')
 bot.remove_command('help')
@@ -132,4 +133,4 @@ async def ban(ctx, user: discord.Member):
     await bot.ban(user)
     await bot.say(embed=emb8)
 
-bot.run('NDY5NjAzMTU3NTA5NjY4ODY0.Djbxlw.iEcJDEuivME9pE2HzsMMB8nw1_E')
+bot.run(os.environ["TOKEN"])
