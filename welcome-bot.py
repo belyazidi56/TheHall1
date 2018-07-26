@@ -26,7 +26,7 @@ demsg=[
     'ass',
     'asshole',
     'ass hole',
-    'di ck',
+    'di ck'
     
 ]
 bypass=[
