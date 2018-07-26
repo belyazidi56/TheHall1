@@ -22,7 +22,12 @@ demsg=[
     'po rn',
     'g ay',
     'fu ck',
-    'dick'
+    'dick',
+    'ass',
+    'asshole',
+    'ass hole',
+    'di ck',
+    
 ]
 bypass=[
         '470406062604943360'
