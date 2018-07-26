@@ -15,7 +15,13 @@ demsg=[
     'boobs',
     'boob',
     'dirt',
-    'shit'
+    'shit',
+    'porn',
+    'gay',
+    'pu ssy',
+    'po rn',
+    'g ay',
+    'fu ck'
 ]
 bypass=[
         '470406062604943360'
