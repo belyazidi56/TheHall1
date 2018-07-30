@@ -15,7 +15,6 @@ demsg=[
     'boobs',
     'boob',
     'dirt',
-    'shit',
     'porn',
     'gay',
     'pu ssy',
@@ -23,7 +22,6 @@ demsg=[
     'g ay',
     'fu ck',
     'dick',
-    'ass',
     'asshole',
     'ass hole',
     'di ck'
