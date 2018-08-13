@@ -114,6 +114,10 @@ async def on_message(message):
                     icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
     emb7.set_thumbnail(url=message.author.avatar_url)
     emb7.add_field(name="**:question:ERROR | You already have nsfw role. :open_mouth:**", value=message.author.id)
+    emb8 = (discord.Embed( color=0xff65a6))
+    emb8.set_author(name="The Hall",
+                    icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
+    emb8.add_field(name="The Hall :",value="**Hello "+message.author.name+"**")
     if message.content.startswith("&iamnsfw"):
             role = discord.utils.get(message.server.roles, name='nsfw')
             if role in message.author.roles:
@@ -124,6 +128,8 @@ async def on_message(message):
                         await bot.send_message(message.channel, embed=emb6)
                     except discord.Forbidden:
                         return
+      if message.content.lower()=="hi":
+        await bot.send_message(message.channel,embed=emb8)
     await bot.process_commands(message)
     @bot.event
     async def on_member_remove(member):
