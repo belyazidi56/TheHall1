@@ -3,9 +3,10 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import os
 import asyncio
+
 bot = commands.Bot(command_prefix='&')
 bot.remove_command('help')
-demsg=[
+demsg = [
     'fuck',
     'nigga',
     'hentai',
@@ -25,11 +26,12 @@ demsg=[
     'asshole',
     'ass hole',
     'di ck'
-    
+
 ]
-bypass=[
-        '470406062604943360'
+bypass = [
+    '470406062604943360'
 ]
+
 
 @bot.command(pass_context=True)
 async def welcome(ctx, user: discord.Member):
@@ -70,13 +72,16 @@ async def info(ctx, user: discord.Member):
     emb2.add_field(name="** User_Joined_At**", value=format(user.joined_at))
     await bot.say(embed=emb2)
 
+
 @bot.event
 async def on_ready():
     print('logged in as')
     print(bot.user.name)
     print(bot.user.id)
     print('-----')
-    await bot.change_presence(game=discord.Game(name='The Hall |&help'),status=discord.Status.dnd)
+    await bot.change_presence(game=discord.Game(name='The Hall |&help'), status=discord.Status.dnd)
+
+
 @bot.event
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
@@ -87,12 +92,16 @@ The Hall is a community based server centred around providing a fun and relaxed 
 - Custom Bots , NSFW content , Games , Active Members , Partner and Hypesquad Discord Members , Giveaways , Music , Ranking System  and more...``` """
 
     await bot.send_message(member, newUserMessage)
-    emb=(discord.Embed(description=':house: |_**Hello '+member.name+' :wave:  Welcome to the Hall, have fun!**_',color=0xff65a6))
-    emb.set_author(name="Welcome To The Hall",icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
+    emb = (discord.Embed(description=':house: |_**Hello ' + member.name + ' :wave:  Welcome to the Hall, have fun!**_',
+                         color=0xff65a6))
+    emb.set_author(name="Welcome To The Hall",
+                   icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
     emb.set_image(url='https://cdn.discordapp.com/attachments/469630446494416908/470419518280302616/giphy.gif')
     emb.set_thumbnail(url=member.avatar_url)
-    await bot.send_message(discord.Object(id='453679995357888522'),embed=emb)
+    await bot.send_message(discord.Object(id='453679995357888522'), embed=emb)
     print("Sent message to " + member.name)
+
+
 @bot.event
 async def on_message(message):
     content = message.content.lower()
@@ -100,14 +109,16 @@ async def on_message(message):
         if word in content:
             if message.channel.id not in bypass:
                 await bot.delete_message(message)
-                await bot.send_message(message.channel,"**Hey "+message.author.name+"!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
+                await bot.send_message(message.channel,
+                                       "**Hey " + message.author.name + "!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
                 break
 
     emb6 = (discord.Embed(description=' NSFW Role Request !', color=0xff65a6))
     emb6.set_author(name="Role Request",
                     icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
     emb6.set_thumbnail(url=message.author.avatar_url)
-    emb6.add_field(name="**:white_check_mark: Success "+message.author.name+" | Role Earned**", value='_'+message.author.id+'_')
+    emb6.add_field(name="**:white_check_mark: Success " + message.author.name + " | Role Earned**",
+                   value='_' + message.author.id + '_')
 
     emb7 = (discord.Embed(description='NSFW Role Request ! ', color=0xff65a6))
     emb7.set_author(name="Role Request ",
@@ -119,40 +130,51 @@ async def on_message(message):
                     icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
     emb8.add_field(name="The Hall :",value="**Hello "+message.author.name+"**")
     if message.content.startswith("&iamnsfw"):
-            role = discord.utils.get(message.server.roles, name='nsfw')
-            if role in message.author.roles:
-                await bot.send_message(message.channel, embed=emb7)
-            else:
-                    try:
-                        await bot.add_roles(message.author, role)
-                        await bot.send_message(message.channel, embed=emb6)
-                    except discord.Forbidden:
-                        return
-      if message.content.lower()=="hi":
+        role = discord.utils.get(message.server.roles, name='nsfw')
+        if role in message.author.roles:
+            await bot.send_message(message.channel, embed=emb7)
+        else:
+            try:
+                await bot.add_roles(message.author, role)
+                await bot.send_message(message.channel, embed=emb6)
+            except discord.Forbidden:
+                return
+    if message.content.lower()=="hi":
         await bot.send_message(message.channel,embed=emb8)
     await bot.process_commands(message)
+
     @bot.event
     async def on_member_remove(member):
-        emb1 = (discord.Embed(description=':negative_squared_cross_mark: |** Goodbye ' + member.name + ' :hand_splayed: we will miss you! **:confused:',color=0xff65a6))
-        emb1.set_author(name="GoodBye",icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
+        emb1 = (discord.Embed(
+            description=':negative_squared_cross_mark: |** Goodbye ' + member.name + ' :hand_splayed: we will miss you! **:confused:',
+            color=0xff65a6))
+        emb1.set_author(name="GoodBye",
+                        icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
         emb1.set_thumbnail(url=member.avatar_url)
-        await bot.send_message(discord.Object(id='453693951950716939'),embed=emb1)
+        await bot.send_message(discord.Object(id='453693951950716939'), embed=emb1)
         print("Sent leave message to " + member.name)
-@bot.command(pass_context = True)
+
+
+@bot.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member):
-    emb8 = (discord.Embed(description=':boot: | **'+ format(user.name) +'** has been **Kicked** from The Hall ', color=0xff65a6))
+    emb8 = (discord.Embed(description=':boot: | **' + format(user.name) + '** has been **Kicked** from The Hall ',
+                          color=0xff65a6))
     emb8.set_thumbnail(url=user.avatar_url)
     emb8.set_image(url='https://media.giphy.com/media/l2SpK3FbiHNMs81Ik/giphy.gif')
     await bot.kick(user)
     await bot.say(embed=emb8)
-@bot.command(pass_context = True)
+
+
+@bot.command(pass_context=True)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, user: discord.Member):
-    emb8 = (discord.Embed(description=':no_entry:  | **'+ format(user.name) +'** has been **Banned** from The Hall ', color=0xff65a6))
+    emb8 = (discord.Embed(description=':no_entry:  | **' + format(user.name) + '** has been **Banned** from The Hall ',
+                          color=0xff65a6))
     emb8.set_thumbnail(url=user.avatar_url)
     emb8.set_image(url='https://i.imgur.com/6Sh8csf.gif')
     await bot.ban(user)
     await bot.say(embed=emb8)
+
 
 bot.run(os.environ["TOKEN"])
