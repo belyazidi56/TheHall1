@@ -135,8 +135,8 @@ async def on_message(message):
                 await bot.send_message(message.channel, embed=emb6)
             except discord.Forbidden:
                 return
-    if message.content.lower()=="hi":
-        await bot.send_message(message.channel,embed=emb8)
+     if message.content.lower()=="hi" or message.content.lower()=="hello":
+        await bot.send_message(message.channel,'Hello '+message.author.mention)
     await bot.process_commands(message)
 
     @bot.event
