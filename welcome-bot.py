@@ -128,14 +128,14 @@ async def on_message(message):
     if message.content.startswith("&iamnsfw"):
         role = discord.utils.get(message.server.roles, name='nsfw')
         if role in message.author.roles:
-            await bot.send_message(message.channel, 'Hello '+message.author.mention)
+            await bot.send_message(message.channel, embed=emb7)
         else:
             try:
                 await bot.add_roles(message.author, role)
                 await bot.send_message(message.channel, embed=emb6)
             except discord.Forbidden:
                 return
-     if message.content.lower()=="hi" or message.content.lower()=="hello":
+    if message.content.lower()=="hi" or message.content.lower()=="hello":
         await bot.send_message(message.channel,'Hello '+message.author.mention)
     await bot.process_commands(message)
 
@@ -171,6 +171,5 @@ async def ban(ctx, user: discord.Member):
     emb8.set_image(url='https://i.imgur.com/6Sh8csf.gif')
     await bot.ban(user)
     await bot.say(embed=emb8)
-
 
 bot.run(os.environ["TOKEN"])
