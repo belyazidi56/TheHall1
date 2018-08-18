@@ -79,7 +79,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('-----')
-    await bot.change_presence(game=discord.Watching(name='The Hall |&help'), status=discord.Status.dnd)
+    await bot.change_presence(Watching=discord.Game(name='The Hall |&help'), status=discord.Status.dnd)
 
 
 @bot.event
