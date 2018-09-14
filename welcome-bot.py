@@ -134,6 +134,10 @@ async def on_message(message):
                 return
     if message.content.lower()=="hi" or message.content.lower()=="hello":
         await bot.send_message(message.channel,'Hello '+message.author.mention)
+        
+    if message.channel.id == 478374025308143656 and message.content != "correct number":
+        await message.delete()
+        await message.channel.send("Whatever message you want", delete_after=5)
     await bot.process_commands(message)
 
     @bot.event
