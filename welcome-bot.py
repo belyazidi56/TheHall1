@@ -4,6 +4,7 @@ from discord.ext.commands import Bot
 import os
 from time import gmtime,strftime 
 import asyncio
+import random
 
 bot = commands.Bot(command_prefix='&')
 bot.remove_command('help')
