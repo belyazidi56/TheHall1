@@ -56,10 +56,6 @@ async def help(ctx):
     emb4.add_field(name="\n**&mvolume**", value="Set Volume", inline=False)
     emb4.add_field(name="\n**&mqueue**", value="Queue", inline=False)
     await bot.say(embed=emb4)
-    
-@bot.command(pass_context=True)
-async def gettime(ctx):
-    await bot.say(strftime("**:calendar:| %Y-%m-%d\n:clock10:| %H:%M:%S**", gmtime()))
 
 @bot.command(pass_context=True)
 async def info(ctx, user: discord.Member):
