@@ -37,7 +37,9 @@ async def welcome(ctx, user: discord.Member):
     emb3.set_thumbnail(url=user.avatar_url)
     emb3.set_image(url='https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
     await bot.say(embed=emb3)
-
+@bot.command(pass_context=True)
+async def date(ctx):
+    await bot.say(strftime("**:calendar:| %Y-%m-%d**", gmtime()))
 
 @bot.command(pass_context=True)
 async def help(ctx):
