@@ -71,7 +71,24 @@ async def info(ctx, user: discord.Member):
     emb2.add_field(name="** User_Hightest_Role**", value=format(user.top_role))
     emb2.add_field(name="** User_Joined_At**", value=format(user.joined_at))
     await bot.say(embed=emb2)
+@bot.command(pass_context=True)
+async def add(cnx,n1,n2):
+    sum= int(n1)+int(n2)
+    await bot.say(sum)
 
+@bot.command(pass_context=True)
+async def multiply(cnx, n1, n2):
+    sum = int(n1) * int(n2)
+    await bot.say(sum)
+
+@bot.command(pass_context=True)
+async def devide(cnx, n1, n2):
+    sum = int(n1) / int(n2)
+    await bot.say(sum)
+@bot.command(pass_context=True)
+async def minus(cnx, n1, n2):
+    sum = int(n1) - int(n2)
+    await bot.say(sum)
 
 @bot.event
 async def on_ready():
