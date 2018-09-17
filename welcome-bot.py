@@ -164,7 +164,7 @@ async def on_message(message):
         if msg.content==str(sum):
             await bot.send_message(message.channel,"Correct!")
         else:
-            await bot.send_message(message.channel,"Incorrect!")    
+            await bot.send_message(message.channel,"Incorrect!")
     await bot.process_commands(message)
 
     @bot.event
