@@ -159,10 +159,13 @@ async def on_message(message):
         n1=random.randint(0,10)
         n2=random.randint(0,10)
         s=n1,'+',n2
-        await bot.send_message(message.channel,s)
+        msg1=await bot.send_message(message.channel,s)
         msg=await bot.wait_for_message(timeout=5,author=message.author)
         sum=int(n1) + int(n2)
-        if msg.content==str(sum):
+        if msg==None :
+            await bot.delete_message(msg1)
+            await bot.send_message(message.channel,"TimeOut!")
+        elif msg.content==str(sum):
             await bot.send_message(message.channel,"Correct!")
         else:
             await bot.send_message(message.channel,"Incorrect!")
