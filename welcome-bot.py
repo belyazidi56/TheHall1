@@ -154,6 +154,17 @@ async def on_message(message):
                 return
     if message.content.lower()=="hi" or message.content.lower()=="hello":
         await bot.send_message(message.channel,'Hello '+message.author.mention)
+    if message.content.startswith("&math"):
+        n1=random.randint(0,10)
+        n2=random.randint(0,10)
+        s=n1,'+',n2
+        await bot.send_message(message.channel,s)
+        msg=await bot.wait_for_message(timeout=5,author=message.author)
+        sum=int(n1) + int(n2)
+        if msg.content==str(sum):
+            await bot.send_message(message.channel,"Correct!")
+        else:
+            await bot.send_message(message.channel,"Incorrect!")    
     await bot.process_commands(message)
 
     @bot.event
