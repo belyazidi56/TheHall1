@@ -27,6 +27,9 @@ demsg = [
     'di ck'
 
 ]
+sym=[
+    '+','-','/','x'
+]
 bypass = [
     '470406062604943360'
 ]
@@ -155,20 +158,38 @@ async def on_message(message):
                 return
     if message.content.lower()=="hi" or message.content.lower()=="hello":
         await bot.send_message(message.channel,'Hello '+message.author.mention)
-    if message.content.startswith("&math"):
-        n1=random.randint(0,10)
-        n2=random.randint(0,10)
-        s=n1,'+',n2
-        msg1=await bot.send_message(message.channel,s)
-        msg=await bot.wait_for_message(timeout=5,author=message.author)
-        sum=int(n1) + int(n2)
+        if message.content.startswith("&math"):
+        n1=random.randint(1,10)
+        n2=random.randint(1,10)
+        sym1=random.choice(sym)
+        s=(n1,sym1,n2)
+        msg1=await bot.send_message(message.channel,str(s))
+        msg=await bot.wait_for_message(timeout=6,author=message.author)
+
+        if sym1=='+':
+            sum=int(n1) + int(n2)
+        if sym1=='-':
+            sum=int(n1) - int(n2)
+        if sym1=='/':
+            sum=int(n1) / int(n2)
+        if sym1=='x':
+            sum=int(n1) * int(n2)
         if msg==None :
             await bot.delete_message(msg1)
             await bot.send_message(message.channel,"TimeOut!")
         elif msg.content==str(sum):
-            await bot.send_message(message.channel,"Correct!")
+            await bot.send_message(message.channel,"Correct "+message.author.mention+"!")
+
         else:
             await bot.send_message(message.channel,"Incorrect!")
+    if message.content.startswith("&guess"):
+        g=random.randint(1,6)
+        await bot.send_message(message.channel,"Guess from 1 to 6")
+        msg=await bot.wait_for_message(author=message.author)
+        if msg.content == str(g):
+            await bot.send_message(message.channel, "Correct Your Are Lucky Today!")
+        else:
+            await bot.send_message(message.channel,"No! The Number is :"+str(g))
     await bot.process_commands(message)
 
     @bot.event
