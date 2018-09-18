@@ -161,7 +161,7 @@ async def on_message(message):
                 return
     if message.content.lower()=="hi" or message.content.lower()=="hello":
         await bot.send_message(message.channel,'Hello '+message.author.mention)
-        if message.content.startswith("&math"):
+    if message.content.startswith("&math"):
         n1=random.randint(1,10)
         n2=random.randint(1,10)
         sym1=random.choice(sym)
