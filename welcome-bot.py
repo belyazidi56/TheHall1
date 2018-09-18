@@ -166,7 +166,7 @@ async def on_message(message):
         n2=random.randint(1,10)
         sym1=random.choice(sym)
         s=(n1,sym1,n2)
-        msg1=await bot.send_message(message.channel,str(s))
+        msg1=await bot.send_message(message.channel,":1234: | **Solve the equation** : "+str(s))
         msg=await bot.wait_for_message(timeout=6,author=message.author)
 
         if sym1=='+':
@@ -179,12 +179,12 @@ async def on_message(message):
             sum=int(n1) * int(n2)
         if msg==None :
             await bot.delete_message(msg1)
-            await bot.send_message(message.channel,"TimeOut!")
+            await bot.send_message(message.channel,"You took too long to reply "+message.author.mention+"!")
         elif msg.content==str(sum):
             await bot.send_message(message.channel,"Correct "+message.author.mention+"!")
 
         else:
-            await bot.send_message(message.channel,"Incorrect!")
+            await bot.send_message(message.channel,"Incorrect "+message.author.mention+"!")
     if message.content.startswith("&guess"):
         g=random.randint(1,6)
         await bot.send_message(message.channel,"Guess from 1 to 6")
@@ -211,8 +211,6 @@ async def on_message(message):
             await bot.send_message(message.channel,"I Choose **Paper** :raised_hand: i Win! :slight_smile:")
         elif msg.content.lower() == "scissors" and str(rps1) == "paper":
             await bot.send_message(message.channel, "I Choose **Paper** :raised_hand: i Lose!:slight_frown:")
-    await bot.process_commands(message)
-       
     await bot.process_commands(message)
 
     @bot.event
