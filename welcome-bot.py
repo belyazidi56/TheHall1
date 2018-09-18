@@ -30,6 +30,9 @@ demsg = [
 sym=[
     '+','-','/','x'
 ]
+rps=[
+    'paper','rock','scissors'
+]
 bypass = [
     '470406062604943360'
 ]
@@ -190,6 +193,26 @@ async def on_message(message):
             await bot.send_message(message.channel, "Correct Your Are Lucky Today!")
         else:
             await bot.send_message(message.channel,"No! The Number is :"+str(g))
+    if message.content.startswith("&rps"):
+        await bot.send_message(message.channel,"**Choose** : \n-*Paper :raised_hand:\n-Rock :punch:\n-Scissors :v:*")
+        rps1=random.choice(rps)
+        msg=await bot.wait_for_message(author=message.author)
+        if msg.content.lower()==str(rps1):
+            await bot.send_message(message.channel,"It's **Tie** :grin:")
+        elif msg.content.lower()=="paper" and str(rps1)=="scissors":
+            await bot.send_message(message.channel,"I Choose **Scissors** :v: i Win ! :slight_smile:")
+        elif msg.content.lower()=="rock" and str(rps1)=="scissors":
+            await bot.send_message(message.channel,"I Choose **Scissors** :v: i Lose!:slight_frown:")
+        elif msg.content.lower()=="paper" and str(rps1)=="rock":
+            await bot.send_message(message.channel,"I Choose **Rock** :punch: i Lose! :slight_frown:")
+        elif msg.content.lower()=="scissors" and str(rps1)=="rock":
+            await bot.send_message(message.channel,"I Choose **Rock** :punch: i Win! :slight_smile:")
+        elif msg.content.lower()=="rock" and str(rps1)=="paper":
+            await bot.send_message(message.channel,"I Choose **Paper** :raised_hand: i Win! :slight_smile:")
+        elif msg.content.lower() == "scissors" and str(rps1) == "paper":
+            await bot.send_message(message.channel, "I Choose **Paper** :raised_hand: i Lose!:slight_frown:")
+    await bot.process_commands(message)
+       
     await bot.process_commands(message)
 
     @bot.event
