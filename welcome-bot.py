@@ -202,7 +202,7 @@ async def on_message(message):
         elif msg.content.lower()=="paper" and str(rps1)=="scissors":
             await bot.send_message(message.channel,"I Choose **Scissors** :v: i Win ! :slight_smile:")
         elif msg.content.lower()=="rock" and str(rps1)=="scissors":
-            await bot.send_message(message.channel,"I Choose **Scissors** :v: i Lose!:slight_frown:")
+            await bot.send_message(message.channel,"I Choose **Scissors** :v: i Lose! :slight_frown:")
         elif msg.content.lower()=="paper" and str(rps1)=="rock":
             await bot.send_message(message.channel,"I Choose **Rock** :punch: i Lose! :slight_frown:")
         elif msg.content.lower()=="scissors" and str(rps1)=="rock":
@@ -210,7 +210,7 @@ async def on_message(message):
         elif msg.content.lower()=="rock" and str(rps1)=="paper":
             await bot.send_message(message.channel,"I Choose **Paper** :raised_hand: i Win! :slight_smile:")
         elif msg.content.lower() == "scissors" and str(rps1) == "paper":
-            await bot.send_message(message.channel, "I Choose **Paper** :raised_hand: i Lose!:slight_frown:")
+            await bot.send_message(message.channel, "I Choose **Paper** :raised_hand: i Lose! :slight_frown:")
     await bot.process_commands(message)
 
     @bot.event
