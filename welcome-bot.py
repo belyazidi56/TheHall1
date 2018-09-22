@@ -159,7 +159,7 @@ async def on_message(message):
                 await bot.send_message(message.channel, embed=emb6)
             except discord.Forbidden:
                 return
-    if message.content.lower()=="hi" or message.content.lower()=="hello":
+    if message.content.lower()=="hi":
         await bot.send_message(message.channel,'Hello '+message.author.mention)
     if message.content.startswith("&math"):
         n1=random.randint(1,10)
