@@ -5,7 +5,7 @@ import os
 from time import gmtime,strftime 
 import asyncio
 import random
-
+import time
 bot = commands.Bot(command_prefix='&')
 bot.remove_command('help')
 demsg = [
@@ -133,8 +133,10 @@ async def on_message(message):
         if word in content:
             if message.channel.id not in bypass:
                 await bot.delete_message(message)
-                await bot.send_message(message.channel,
+                msgg=await bot.send_message(message.channel,
                                        "**Hey " + message.author.name + "!** You're not allowed to use that word here! Please Do not Use It Again! :open_mouth:")
+                time.sleep(3)
+                await bot.delete_message(msgg)
                 break
 
     emb6 = (discord.Embed(description=' NSFW Role Request !', color=0xff65a6))
