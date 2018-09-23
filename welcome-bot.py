@@ -9,7 +9,8 @@ import time
 bot = commands.Bot(command_prefix='&')
 bot.remove_command('help')
 demsg = [
-    'fuck',
+    'fuckyou',
+    'fuck you',
     'nigga',
     'hentai',
     'nigger',
