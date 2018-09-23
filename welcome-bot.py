@@ -177,7 +177,7 @@ async def on_message(message):
         if sym1=='-':
             sum=int(n1) - int(n2)
         if sym1=='/':
-            sum=int(n1) / int(n2)
+            sum=int(n1/n2)
         if sym1=='x':
             sum=int(n1) * int(n2)
         if msg==None :
