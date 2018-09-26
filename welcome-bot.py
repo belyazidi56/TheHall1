@@ -169,7 +169,7 @@ async def on_message(message):
         n2=random.randint(1,10)
         sym1=random.choice(sym)
         s=(n1,sym1,n2)
-        msg1=await bot.send_message(message.channel,message.author.mention+":1234: | **Solve the equation** : "+str(s))
+        msg1=await bot.send_message(message.channel,":1234:|" +message.author.mention+" **Solve the equation** : **"+str(s)+"**)
         msg=await bot.wait_for_message(timeout=6,author=message.author)
 
         if sym1=='+':
@@ -184,10 +184,10 @@ async def on_message(message):
             await bot.delete_message(msg1)
             await bot.send_message(message.channel,"You took too long to reply "+message.author.mention+"!")
         elif msg.content==str(sum):
-            await bot.send_message(message.channel,"Correct "+message.author.mention+"!")
+            await bot.send_message(message.channel,"**Correct "+message.author.mention+"**! :thumbsup:")
 
         else:
-            await bot.send_message(message.channel,"Incorrect "+message.author.mention+"!")
+            await bot.send_message(message.channel,"**Incorrect "+message.author.mention+"**! :thumbsdown:")
     if message.content.startswith("&guess"):
         g=random.randint(1,6)
         await bot.send_message(message.channel,"Guess from 1 to 6")
