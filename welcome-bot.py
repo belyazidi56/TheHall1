@@ -169,7 +169,7 @@ async def on_message(message):
         n2=random.randint(1,10)
         sym1=random.choice(sym)
         s=(n1,sym1,n2)
-        msg1=await bot.send_message(message.channel,message.mention+":1234: | **Solve the equation** : "+str(s))
+        msg1=await bot.send_message(message.channel,message.author.mention+":1234: | **Solve the equation** : "+str(s))
         msg=await bot.wait_for_message(timeout=6,author=message.author)
 
         if sym1=='+':
