@@ -184,10 +184,10 @@ async def on_message(message):
             await bot.delete_message(msg1)
             await bot.send_message(message.channel,"You took too long to reply "+message.author.mention+"!")
         elif msg.content==str(sum):
-            await bot.send_message(message.channel,"**Correct "+message.author.mention+"**! :thumbsup:")
+            await bot.send_message(message.channel,"Correct "+message.author.mention+"! :thumbsup:")
 
         else:
-            await bot.send_message(message.channel,"**Incorrect "+message.author.mention+"**! :thumbsdown:")
+            await bot.send_message(message.channel,"Incorrect "+message.author.mention+"! :thumbsdown:")
     if message.content.startswith("&guess"):
         g=random.randint(1,6)
         await bot.send_message(message.channel,"Guess from 1 to 6")
