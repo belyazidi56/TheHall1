@@ -123,7 +123,7 @@ The Hall is a community based server centred around providing a fun and relaxed 
                    icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
     emb.set_image(url='https://media.discordapp.net/attachments/466276309501476874/489133981972037633/ezgif.com-resize.gif')
     emb.set_thumbnail(url=member.avatar_url)
-    await bot.send_message(discord.Object(id='453679995357888522'), embed=emb)
+    await bot.send_message(discord.Object(id='496331917805748246'), embed=emb)
     print("Sent message to " + member.name)
 
 
