@@ -117,7 +117,8 @@ The Hall is a Discord server centered around providing a fun and relaxed environ
 ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
 Invite your friends to join our server using this link https://discord.gg/eSDxYdF and get some cool perks!
 
-﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ```"""
+﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌
+https://media.discordapp.net/attachments/466276309501476874/497538388224770058/giphy.gif ```"""
 
     await bot.send_message(member, newUserMessage)
     emb = (discord.Embed(description=':house: |_**Hello ' + member.name + ' :wave:  Welcome to the Hall, have fun!**_',
