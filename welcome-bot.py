@@ -110,7 +110,7 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
-    newUserMessage = """```**Welcome To The Hall """+member.name+"""Please make sure to read the rules and enjoy your stay with us!**
+    newUserMessage = """**Welcome To The Hall """+member.name+"""Please make sure to read the rules and enjoy your stay with us!**
 ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
 The Hall is a Discord server centered around providing a fun and relaxed environment for its users. We offer our custom made bots with fun, competitive features, cool custom emotes, regular events, giveaways and much more. Whether you are looking to find some gaming partners, make some new friends, or just chat... our server is the place for you. 
 
@@ -118,7 +118,7 @@ The Hall is a Discord server centered around providing a fun and relaxed environ
 Invite your friends to join our server using this link https://discord.gg/eSDxYdF and get some cool perks!
 
 ﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌
- ```https://media.discordapp.net/attachments/466276309501476874/497538388224770058/giphy.gif"""
+ https://media.discordapp.net/attachments/466276309501476874/497538388224770058/giphy.gif"""
 
     await bot.send_message(member, newUserMessage)
     emb = (discord.Embed(description=':house: |_**Hello ' + member.name + ' :wave:  Welcome to the Hall, have fun!**_',
