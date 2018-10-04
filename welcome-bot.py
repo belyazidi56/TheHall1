@@ -110,18 +110,21 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
-    newUserMessage = """**Welcome to The Hall :house: """ + member.name + """ please make sure to read the rules and enjoy your stay
-The Hall is a community based server centred around providing a fun and relaxed environment for its users.
--We have :**
-```diff
-- Custom Bots , NSFW content , Games , Active Members , Partner and Hypesquad Discord Members , Giveaways , Music , Ranking System  and more...``` """
+    newUserMessage = """**Welcome To The Hall '+member.name+' Please make sure to read the rules and enjoy your stay with us!**
+﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
+The Hall is a Discord server centered around providing a fun and relaxed environment for its users. We offer our custom made bots with fun, competitive features, cool custom emotes, regular events, giveaways and much more. Whether you are looking to find some gaming partners, make some new friends, or just chat... our server is the place for you. 
+
+﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
+Invite your friends to join our server using this link https://discord.gg/eSDxYdF and get some cool perks!
+
+﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌``` """
 
     await bot.send_message(member, newUserMessage)
     emb = (discord.Embed(description=':house: |_**Hello ' + member.name + ' :wave:  Welcome to the Hall, have fun!**_',
                          color=0xff65a6))
     emb.set_author(name="Welcome To The Hall",
                    icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
-    emb.set_image(url='https://media.discordapp.net/attachments/466276309501476874/489133981972037633/ezgif.com-resize.gif')
+    emb.set_image(url='https://giphy.com/gifs/NsIIjsYlJrPCWSUj58')
     emb.set_thumbnail(url=member.avatar_url)
     await bot.send_message(discord.Object(id='496331917805748246'), embed=emb)
     print("Sent message to " + member.name)
