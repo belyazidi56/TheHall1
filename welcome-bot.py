@@ -125,7 +125,7 @@ Invite your friends to join our server using this link https://discord.gg/eSDxYd
                          color=0xff65a6))
     emb.set_author(name="Welcome To The Hall",
                    icon_url="https://media.discordapp.net/attachments/466276309501476874/470739164392980490/Hall_Normal.png?width=480&height=480")
-    emb.set_image(url='https://media.discordapp.net/attachments/466276309501476874/497538388224770058/giphy.gif')
+    emb.set_image(url='https://images-ext-1.discordapp.net/external/9PvPLVRiuZ_HfCOreV6kfj0AK1-7MA-Dbax21Felh2Y/https/media.discordapp.net/attachments/466276309501476874/489133981972037633/ezgif.com-resize.gif')
     emb.set_thumbnail(url=member.avatar_url)
     await bot.send_message(discord.Object(id='496331917805748246'),embed=emb)
     print("Sent message to " + member.name)
